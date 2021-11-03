@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# nykaa/new/*
+# nykaa/scrap/*
+# nykaa/enhance/*
+
 # C extensions
 *.so
 
