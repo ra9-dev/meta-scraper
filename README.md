@@ -42,10 +42,10 @@ Requires
 Clone the Repo and Install the dependencies.
 
 ```sh
-$ cd meta-scrapper
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ pip install -r requirements.txt
+cd meta-scrapper
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 Congrats you're all set up. Let's start
@@ -55,7 +55,7 @@ Congrats you're all set up. Let's start
 - Execute `add_url.py`
 
   ```sh
-  $ python add_url.py
+  python add_url.py
   ```
 
   An input terminal will open up. Feel free to use these inputs or get your own at [Nykaa](https://nykaa.com)
@@ -81,7 +81,7 @@ Congrats you're all set up. Let's start
 - Execute `scrapper.py`
 
   ```sh
-  $ python scrapper.py
+  python scrapper.py
   ```
 
   This scraps the info from (valid product) URLs into _nykaa/scrap_ as _time.csv_ and deletes the earlier file from _nykaa/new_ directory
@@ -89,7 +89,7 @@ Congrats you're all set up. Let's start
 - Finally execute `enhancer.py`
 
   ```sh
-  $ python enhancer.py
+  python enhancer.py
   ```
 
   This search the scrapped data received in previous step on youtube and stores the top 5 links into product data as `testimonials` into the scrapped data and store the final data in _nykaa/enhance_ as _time.csv_. This also stores the data for those we don't find any result into _nykaa/scrap_ as _time_failed.csv_.
