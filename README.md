@@ -62,14 +62,18 @@ Congrats you're all set up. Let's start
 
   ```
   Number of URL(s) you wish to add [Max 10]: 4
+
   Enter url 1:
-      https://www.nykaa.com/personal-care/face/facewash/c/1387?ptype=lst&id=1387&root=nav_3&dir=desc&order=popularity
+  https://www.nykaa.com/personal-care/face/facewash/c/1387?ptype=lst&id=1387&root=nav_3&dir=desc&order=popularity
+
   Enter url 2:
-      https://www.nykaa.com/lakme-blush-glow-kiwi-freshness-gel-face-wash-with-kiwi-extracts/p/457011?productId=457011&pps=1&skuId=457009
+  https://www.nykaa.com/lakme-blush-glow-kiwi-freshness-gel-face-wash-with-kiwi-extracts/p/457011?productId=457011&pps=1&skuId=457009
+
   Enter url 3:
-      https://www.nykaa.com/tresemme-hairfall-defense-shampoo/p/7681?productId=7681&pps=5&skuId=401646
+  https://www.nykaa.com/tresemme-hairfall-defense-shampoo/p/7681?productId=7681&pps=5&skuId=401646
+
   Enter url 4:
-      https://www.nykaa.com/wow-skin-science-onion-black-seed-oil-shampoo-300ml/p/587063?productId=587063&pps=6
+  https://www.nykaa.com/wow-skin-science-onion-black-seed-oil-shampoo-300ml/p/587063?productId=587063&pps=6
   ```
 
   This adds the (valid) URLs into _nykaa/new_ directory as _time.csv_
