@@ -56,6 +56,11 @@ Congrats you're all set up. Let's start
 
   ```sh
   $ python add_url.py
+  ```
+
+  An input terminal will open up. Feel free to use these inputs or get your own at [Nykaa](https://nykaa.com)
+
+  ```
   Number of URL(s) you wish to add [Max 10]: 4
   Enter url 1:
       https://www.nykaa.com/personal-care/face/facewash/c/1387?ptype=lst&id=1387&root=nav_3&dir=desc&order=popularity
