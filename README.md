@@ -19,13 +19,11 @@ _Please Note:_
 
 > The application required 3 different scripts to run
 >
-> 1. _Adding urls_
-> 2. _Scrapping Nykaa Product Page (to get basic info)_
-> 3. _Get video testimonials from Youtube. (top 5)_
->    This is done to make application for scalable in future and more error-proof today.
->    Currently each script needs to be executed manually, in future a queue based trigger could be made to make it more seamless.
->    For demo purposes, csv files have been used rather than a database to store database.
->    Many functions/file handlers could be made generic and re-used, but were avoided due to lack of time.
+> _1. Adding urls_ > _2. Scrapping Nykaa Product Page (to get basic info)_ > _3. Get video testimonials from Youtube. (top 5)_
+> This is done to make application for scalable in future and more error-proof today.
+> Currently each script needs to be executed manually, in future a queue based trigger could be made to make it more seamless.
+> For demo purposes, csv files have been used rather than a database to store database.
+> Many functions/file handlers could be made generic and re-used, but were avoided due to lack of time.
 
 ## Future Scope
 
@@ -44,10 +42,10 @@ Requires
 Clone the Repo and Install the dependencies.
 
 ```sh
-cd meta-scrapper
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+$ cd meta-scrapper
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
 ```
 
 Congrats you're all set up. Let's start
@@ -57,12 +55,16 @@ Congrats you're all set up. Let's start
 - Execute `add_url.py`
 
   ```sh
-  python add_url.py
-      Number of URL(s) you wish to add [Max 10]: 4
-      Enter url 1: https://www.nykaa.com/personal-care/face/facewash/c/1387?ptype=lst&id=1387&root=nav_3&dir=desc&order=popularity
-      Enter url 2: https://www.nykaa.com/lakme-blush-glow-kiwi-freshness-gel-face-wash-with-kiwi-extracts/p/457011?productId=457011&pps=1&skuId=457009
-      Enter url 3: https://www.nykaa.com/tresemme-hairfall-defense-shampoo/p/7681?productId=7681&pps=5&skuId=401646
-      Enter url 4: https://www.nykaa.com/wow-skin-science-onion-black-seed-oil-shampoo-300ml/p/587063?productId=587063&pps=6
+  $ python add_url.py
+  Number of URL(s) you wish to add [Max 10]: 4
+  Enter url 1:
+      https://www.nykaa.com/personal-care/face/facewash/c/1387?ptype=lst&id=1387&root=nav_3&dir=desc&order=popularity
+  Enter url 2:
+      https://www.nykaa.com/lakme-blush-glow-kiwi-freshness-gel-face-wash-with-kiwi-extracts/p/457011?productId=457011&pps=1&skuId=457009
+  Enter url 3:
+      https://www.nykaa.com/tresemme-hairfall-defense-shampoo/p/7681?productId=7681&pps=5&skuId=401646
+  Enter url 4:
+      https://www.nykaa.com/wow-skin-science-onion-black-seed-oil-shampoo-300ml/p/587063?productId=587063&pps=6
   ```
 
   This adds the (valid) URLs into _nykaa/new_ directory as _time.csv_
@@ -70,7 +72,7 @@ Congrats you're all set up. Let's start
 - Execute `scrapper.py`
 
   ```sh
-  python scrapper.py
+  $ python scrapper.py
   ```
 
   This scraps the info from (valid product) URLs into _nykaa/scrap_ as _time.csv_ and deletes the earlier file from _nykaa/new_ directory
@@ -78,7 +80,7 @@ Congrats you're all set up. Let's start
 - Finally execute `enhancer.py`
 
   ```sh
-  python enhancer.py
+  $ python enhancer.py
   ```
 
   This search the scrapped data received in previous step on youtube and stores the top 5 links into product data as `testimonials` into the scrapped data and store the final data in _nykaa/enhance_ as _time.csv_. This also stores the data for those we don't find any result into _nykaa/scrap_ as _time_failed.csv_.
