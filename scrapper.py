@@ -1,11 +1,12 @@
 """scraps url from nykaa_urls file"""
 
-from math import prod
 import os
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import parse_qs, urlparse
+
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+
 from add_url import validate_url_list
 
 RELATIVE_NEW_DIR_PATH = "nykaa/new/"
@@ -49,6 +50,7 @@ def scrap_nykaa(url):
 
 def process_csv(file_path):
     """Get URLs -> Validate URLs -> Get Product Details -> Store"""
+    print(f"READING from {file_path =}")
     urls = pd.read_csv(file_path)
     urls = urls["url"].tolist()
     valid_urls = validate_url_list(url_list=urls)
