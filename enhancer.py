@@ -21,6 +21,7 @@ def enhance(product):
         "key": API_KEY,
         "regionCode": "IN",
         "type": "video",
+        "order": "viewCount",
     }
     response = requests.get(url=YOUTUBE_SEARCH_API, params=req_params)
     if response.status_code != 200:
@@ -67,20 +68,27 @@ def process_csv(file_path):
             dir_path, RELATIVE_ENHANCE_DIR_PATH, file_name
         )
         enhanced.to_csv(complete_file_path)
-        print(f"{len(enhanced)} Enhanced Data is stored in `{complete_file_path}`.")
+        print(
+            f"{len(enhanced)} Enhanced Data is stored in `{complete_file_path}`."
+        )
 
     if len(failed) > 0:
         failed = pd.DataFrame(failed)
-        failed.to_csv(file_path)
+        file_name = file_path.split("/")[-1].split(".")[0]
+        file_name = f"{file_name}_failed.csv"
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        complete_file_path = os.path.join(
+            dir_path, RELATIVE_SCRAP_DIR_PATH, file_name
+        )
+        failed.to_csv(complete_file_path)
         print(f"{len(failed)} Failed URL(s) restored in `{file_path}`.")
 
-    else:
-        # remove file when processed
-        try:
-            os.remove(file_path)
-            print("FILE PROCESSED. REMOVING THIS FILE")
-        except OSError:
-            pass
+    # remove file when processed
+    try:
+        os.remove(file_path)
+        print("FILE PROCESSED. REMOVING THIS FILE")
+    except OSError:
+        pass
 
 
 def process():
